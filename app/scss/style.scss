@@ -1,0 +1,345 @@
+@import "fonts";
+@import "base";
+.header {
+  background: #002F34;
+  z-index: 5;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  min-height: 80px;
+}
+.main {
+  padding-top: 80px;
+}
+.promo {
+  overflow-y: hidden;
+  height: calc(100vh - 80px);
+  position: relative;
+}
+.promo-row {
+  display: flex;
+  position: relative;
+  padding-right: 52px;
+}
+.promo-o {
+  display: none;
+}
+.promo-caption {
+  width: 860px;
+  height: 860px;
+  padding: 30px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  border: 180px solid #23E5DB;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -180px;
+  h1 {
+    text-align: center;
+    font-family: "Platform-OLX-App";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  p {
+    color: #002F34;
+    text-align: center;
+    font-family: Platform;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124.74%; /* 22.453px */
+  }
+}
+.promo-img {
+  width: 473px;
+  height: calc(100vh - 80px);
+  flex-shrink: 0;
+  margin-left: auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.promo-x {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.promo-x-sm {
+  display: none;
+}
+.test-row {
+  position: relative;
+  padding-right: 470px;
+}
+.test-container {
+  flex: 1;
+  padding: 42px 74px 42px 0;
+}
+.test-header {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+.test-number {
+  color: #002F34;
+  font-family: "Platform OLX App";
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 124.74%; /* 26.195px */
+  text-transform: uppercase;
+  white-space: nowrap;
+  span {
+    color: #23E5DB;
+  }
+}
+.test-question {
+  margin-top: 20px;
+  color: #002F34;
+  font-family: "Platform OLX";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}
+.test-answers {
+  margin-top: 20px;
+}
+.test-answer {
+  padding: 15px 0;
+  border-top: 1px solid #D9D9D9;
+  border-bottom: 1px solid #D9D9D9;
+}
+.test-answer + .test-answer {
+  border-top: none;
+}
+.test-answer-checkbox {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+  }
+  p {
+    color: #002F34;
+    font-family: "Platform OLX";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124.74%; /* 22.453px */
+  }
+}
+.checkmark {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+.checkmark:before {
+  content: '';
+  background-image: url("../img/icon/checkmark.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+}
+.test-answer-checkbox.success {
+  input:checked ~ p {
+    color: #00CAC0;
+  }
+  input:checked ~ .checkmark:before {
+    background-image: url("../img/icon/checkmark-success.svg");
+  }
+}
+.test-answer-checkbox.error {
+  input:checked ~ p {
+    color: #FF5636;
+  }
+  input:checked ~ .checkmark:before {
+    background-image: url("../img/icon/checkmark-error.svg");
+  }
+}
+.test-answer-correct {
+  margin-top: 15px;
+  color: #002F34;
+  font-family: "Platform OLX";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+.test-answer-correct b {
+  font-weight: 700;
+}
+.test-navigation {
+  margin-top: 33px;
+  .btn {
+    width: 100%;
+  }
+}
+.test-img {
+  width: 470px;
+  height: calc(100vh - 80px);
+  position: fixed;
+  top: 80px;
+  flex-shrink: 0;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.test-img-sm {
+  display: none;
+}
+.test-x {
+  position: fixed;
+  right: 0;
+  top: 80px;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.result {
+  display: flex;
+  flex-direction: column;
+}
+.result-o {
+  position: fixed;
+  left: 0;
+  top: 80px;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  background: #CBF7EE;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.result-container {
+  padding: 10px 55px 55px;
+  background: #fff;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 736px;
+  margin: 0 auto;
+  flex: 1;
+}
+.result-img-sm {
+  display: none;
+}
+.result-img img {
+  max-width: 100%;
+}
+.result-title {
+  color: #002F34;
+  font-family: "Platform OLX App";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 124.74%; /* 39.917px */
+  text-transform: uppercase;
+  margin-top: 20px;
+  text-align: center;
+  span {
+    color: #23E5DB;
+  }
+}
+.result-subtitle {
+  margin-top: 20px;
+  color: #002F34;
+  text-align: center;
+  font-family: "Platform OLX";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 27px */
+}
+.result-text {
+  color: #002F34;
+  font-family: "Platform OLX";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+  a {
+    color: #3B77FF;
+  }
+}
+.result-container .btn {
+  margin-top: 20px;
+}
+.result-x {
+  position: fixed;
+  right: 0;
+  top: 80px;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}
+
+
+
+
+
+
+
+
+@import "media";
